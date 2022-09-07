@@ -1,2 +1,5 @@
 # DIRS
 __pycache__
+
+# FILES
+.DS_Store

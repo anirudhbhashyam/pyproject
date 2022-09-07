@@ -1,0 +1,24 @@
+{
+    "TEMPLATE_PATH": "templates",
+
+    "PROJECT_DIRS": {
+        "SRC": "src",
+        "RES": "res",
+        "CONF": "config",
+        "TEST": "test"
+    },
+
+    "PROJECT_FILES": { 
+        "MAIN": "main.py",
+        "README": "README.md",
+        "SETTINGS": "config/settings.json",
+        "CONF": "src/config.py",
+        "GITIGNORE": ".gitignore"
+    },
+
+    "PROJECT_TEMPLATES": {
+        "MAIN": "templates/main.txt",
+        "README": "templates/readme.txt",
+        "CONF": "templates/config.txt"
+    }
+}

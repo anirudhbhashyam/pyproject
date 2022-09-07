@@ -22,22 +22,19 @@ class Project:
     templates: dict[str, str] = field(
         init = False
     )
-    _config_data: dict[str, str] = field(
-        init = False
-    )
 
     def __post_init__(self) -> None:
         config = Config(
             config_dir = Path(__file__).parents[1].joinpath("config"),
             filenames = ["settings.json"]
         )
-        self._config_data = next(config.load())
+        _config_data = next(config.load())
         self.project_dir = self.path.joinpath(self.name)
         self.working_dir = Path(__file__).parents[1]
 
-        self.dirs = self._config_data["PROJECT_DIRS"]
-        self.files = self._config_data["PROJECT_FILES"]
-        self.templates = self._config_data["PROJECT_TEMPLATES"]
+        self.dirs = _config_data["PROJECT_DIRS"]
+        self.files = _config_data["PROJECT_FILES"]
+        self.templates = _config_data["PROJECT_TEMPLATES"]
 
     def create_project(self) -> None:
         self.project_dir.mkdir(parents = True, exist_ok = True)

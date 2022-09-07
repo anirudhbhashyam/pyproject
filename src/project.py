@@ -28,13 +28,13 @@ class Project:
             config_dir = Path(__file__).parents[1].joinpath("config"),
             filenames = ["settings.json"]
         )
-        _config_data = next(config.load())
+        config_data = next(config.load())
         self.project_dir = self.path.joinpath(self.name)
         self.working_dir = Path(__file__).parents[1]
 
-        self.dirs = _config_data["PROJECT_DIRS"]
-        self.files = _config_data["PROJECT_FILES"]
-        self.templates = _config_data["PROJECT_TEMPLATES"]
+        self.dirs = config_data["PROJECT_DIRS"]
+        self.files = config_data["PROJECT_FILES"]
+        self.templates = config_data["PROJECT_TEMPLATES"]
 
     def create_project(self) -> None:
         self.project_dir.mkdir(parents = True, exist_ok = True)
